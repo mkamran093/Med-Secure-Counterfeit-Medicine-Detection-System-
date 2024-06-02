@@ -1,7 +1,7 @@
 # MedSecure - Counterfeit Medicine Detection system
 
 ### How to Run The system
-1. The Smart contract is already deployed so you have to just access it from the hash: . No need to start truffle suite engine.
+1. The Smart contract is already deployed and you can access it from the hash: '0x62081f016446585cCC507528cc785980296b4Ccd' . No need to start truffle suite engine and redeploy the contract.
 2. Install PostgreSQL on your local machine and create a database from the configuration files from Database folder.
 3. Go to the Backend folder and in postgres.js file, insert the credentials of your database.
 4. Open the terminal and enter the following command: 

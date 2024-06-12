@@ -1,0 +1,47 @@
+-- Create the authentication table
+CREATE TABLE public.user_auth
+(
+    user_name VARCHAR(50) NOT NULL,
+    user_password VARCHAR(50) NOT NULL,
+    user_id SERIAL,
+    user_role VARCHAR(50) NOT NULL,
+    PRIMARY KEY (user_id, user_name)
+);
+
+-- Set the owner of the authentication table
+ALTER TABLE public.user_auth
+    OWNER TO postgres;
+
+-- Create a unique index on the username column
+CREATE UNIQUE INDEX user_name_idx
+    ON public.user_auth (user_name);
+
+-- Create the profile table
+CREATE TABLE public.user_profile
+(
+    full_name VARCHAR(50),
+    user_description VARCHAR(500),
+    user_name VARCHAR(50) NOT NULL,
+    user_website VARCHAR,
+    user_location VARCHAR(50),
+    profile_image VARCHAR(50),
+    user_role VARCHAR(50),
+    profile_id SERIAL PRIMARY KEY
+);
+
+-- Set the owner of the profile table
+ALTER TABLE public.user_profile
+    OWNER TO postgres;
+
+-- Create the product table
+CREATE TABLE public.product_info
+(
+    product_name VARCHAR(50),
+    product_serial_number VARCHAR(50) DEFAULT nextval('product_productid_seq'::regclass) NOT NULL PRIMARY KEY,
+    product_brand VARCHAR(50)
+);
+
+-- Set the owner of the product table
+ALTER TABLE public.product_info
+    OWNER TO postgres;
+
